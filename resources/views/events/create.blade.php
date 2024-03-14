@@ -9,7 +9,11 @@
       @csrf
       <div class="form-group">
         <label for="image">Evento:</label>
-        <input type="file" id="image" name="image" class="form-coontrol-file">
+        <input type="file" id="image" name="image" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="image">Data do Evento:</label>
+        <input type="date" id="image" name="date" class="form-control">
       </div>
       <div class="form-group">
         <label for="title">Evento:</label>
@@ -51,4 +55,5 @@
       <input type="submit" class="btn btn-primary" value="Criar Evento">
     </form>
   </div>
+
 @endsection
