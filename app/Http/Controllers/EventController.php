@@ -71,7 +71,6 @@ class EventController extends Controller
                     $hasUserJoined = true;
                 }
             }
-            
         }
 
         $eventOwner = User::where('id', $event->user_id)->first()->toArray();
@@ -119,14 +118,14 @@ class EventController extends Controller
         return redirect('/dashboard')->with('msg', 'Evento editado com sucesso!');
 
     }
-
+    //Analisar erro na eventsAsParticipant
     public function joinEvent($id){
         $user = auth()->user();
         $user->eventsAsParticipant()->attach($id);
         $event = Event::findOrFail($id);
         return redirect('/dashboard')->with('msg', 'Sua presença está confirmada no evento: '.$event->title); 
     }
-
+    //Analisar erro na eventsAsParticipant
     public function leaveEvent($id){
         $user = auth()->user();
         $event = Event::findOrFail($id);
