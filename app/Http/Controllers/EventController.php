@@ -71,6 +71,7 @@ class EventController extends Controller
                     $hasUserJoined = true;
                 }
             }
+            
         }
 
         $eventOwner = User::where('id', $event->user_id)->first()->toArray();
